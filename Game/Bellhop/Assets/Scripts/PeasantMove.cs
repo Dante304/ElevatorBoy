@@ -8,6 +8,7 @@ public class PeasantMove : MonoBehaviour
     public float waitTimeMove;
     public float waitTimeDestroy;
     public int sideToWalk;
+    public GameObject speakCloud;
     private Rigidbody2D peasantRigidbody;
 
     void Start()
@@ -39,6 +40,7 @@ public class PeasantMove : MonoBehaviour
         if (collision.tag == "Door")
         {
             speed = 0;
+            GameObject.FindGameObjectWithTag("GameMechanics").GetComponentInChildren<PeasentCounter>().AddPeasent();
             StartCoroutine(WaitAndDestroy());
         }
     }
@@ -46,12 +48,14 @@ public class PeasantMove : MonoBehaviour
     IEnumerator WaitAndReturnSpeed(float tempSpeed)
     {
         float counter = 0;
+        GameObject.FindGameObjectWithTag("GameMechanics").GetComponentInChildren<FloorRandomizer>().RandomizeFloor();
+        speakCloud.SetActive(true);
         while (counter < waitTimeMove)
         {
             counter += Time.deltaTime;
             yield return null;
         }
-
+        speakCloud.SetActive(false);
         speed = tempSpeed;
     }
 
