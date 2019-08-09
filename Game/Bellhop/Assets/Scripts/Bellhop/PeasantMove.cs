@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PeasantMove : MonoBehaviour
 {
@@ -49,7 +50,12 @@ public class PeasantMove : MonoBehaviour
     {
         float counter = 0;
         GameObject.FindGameObjectWithTag("GameMechanics").GetComponentInChildren<FloorRandomizer>().RandomizeFloor();
+        int lastPeasent = GameObject.FindGameObjectWithTag("GameMechanics").GetComponentInChildren<ListOfPeasentInLift>().listOfPeasents.Count;
+        float floorOfLastPeasent = GameObject.FindGameObjectWithTag("GameMechanics").GetComponentInChildren<ListOfPeasentInLift>().listOfPeasents[lastPeasent - 1].Floor;
+        Debug.Log("Piętro: "+ floorOfLastPeasent);
         speakCloud.SetActive(true);
+        GetComponentInChildren<TextMeshPro>().SetText("NA "+ floorOfLastPeasent + " PIĘTRO");
+        
         while (counter < waitTimeMove)
         {
             counter += Time.deltaTime;

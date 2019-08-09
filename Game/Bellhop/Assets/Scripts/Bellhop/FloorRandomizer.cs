@@ -11,7 +11,7 @@ public class FloorRandomizer : MonoBehaviour
     {
 
         PeasentInLift peasent = this.gameObject.AddComponent<PeasentInLift>();
-        peasent.Floor = Random.Range(minFloor, maxFloor);
+        peasent.Floor = (int)Random.Range(minFloor, maxFloor);
         peasent.savePeasentInLift();
     }
 }
