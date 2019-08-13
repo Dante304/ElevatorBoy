@@ -8,6 +8,9 @@ TagManager:
   - Bar
   - Door
   - GameMechanics
+  - PeasantSpawn
+  - StopMove
+  - DecisionButtons
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Napis
   - 
   - 
   - 
@@ -44,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Napis
+    uniqueID: 537706245
     locked: 0

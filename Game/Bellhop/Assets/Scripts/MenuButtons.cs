@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    public bool EscButton;
     public void ToMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -23,5 +24,16 @@ public class MenuButtons : MonoBehaviour
     public void PressExit()
     {
         Application.Quit();
+    }
+
+    public void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape) && EscButton)
+        {
+            SceneManager.LoadScene("Game");
+        }
+
+        
     }
 }

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Work.unity
     guid: c355594ff22a5014aa8891caec6ebd9c
+  - enabled: 1
+    path: Assets/Scenes/WitchHunter.unity
+    guid: 6340520654e46bc4cadf251aa0bfd171
   m_configObjects: {}

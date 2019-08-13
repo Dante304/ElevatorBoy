@@ -33,7 +33,5 @@ public class PlayerMove : MonoBehaviour
         Vector2 tempVector = new Vector2(h, v);
         tempVector = tempVector.normalized * speed * Time.deltaTime;
         playerRigidbody.MovePosition(playerRigidbody.position + tempVector);
-
-
     }
 }
